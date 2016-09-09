@@ -16,7 +16,7 @@ public class Hourly extends Emplyee {
 	}
 	private double hoursPerWeek;
 	@Override
-	public double calcGrossPay(int month) {		
+	public double calcGrossPay(int month,int year) {		
 		return hourlyWage*hoursPerWeek*4;
 	}
 

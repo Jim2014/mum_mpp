@@ -28,7 +28,7 @@ public class Commissioned extends Emplyee {
 	}
 	
 	@Override
-	public double calcGrossPay(int month) {
+	public double calcGrossPay(int month,int year) {
 		double sumOrderAmount=0.0;
 		for(Order order : orders)
 		{
@@ -36,7 +36,8 @@ public class Commissioned extends Emplyee {
 			 Calendar cal = Calendar.getInstance();
 			 cal.setTime(order.getOrderDate());
 			 int orderMonth = cal.get(Calendar.MONTH);
-			if(orderMonth==month)
+			 int orderYear = cal.get(Calendar.YEAR);
+			if(orderMonth==month&&orderYear==year)
 				sumOrderAmount+=order.getOrderAmmount();
 		}
 		return sumOrderAmount*this.commission;
