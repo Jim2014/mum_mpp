@@ -3,7 +3,8 @@ package prob2.lab5.mp;
 public class Triangle implements IArea {
     public Triangle(double base,double height)
     {
-    	
+    	this.base=base;
+    	this.height=height;
     }
 	public double getBase() {
 		return base;
