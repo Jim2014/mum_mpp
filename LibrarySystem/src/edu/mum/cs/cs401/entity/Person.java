@@ -16,6 +16,7 @@ public class Person {
     private String password;
     public final static String ADMIN="A";
     public final static  String LIBRARIAN="L";
+    public final static  String ADMINLIBRARIAN="A&L";
     public final static  String MEMBER="M";
 
     private String role;

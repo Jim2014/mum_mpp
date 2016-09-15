@@ -19,7 +19,7 @@
     <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="345.0" text="Login" textFill="#1221eb">
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="345.0" text="Library System" textFill="#1221eb">
          <font>
             <Font name="Arial Bold" size="20.0" />
          </font></Label>
@@ -37,10 +37,11 @@
          <children>
             <Label alignment="CENTER_RIGHT" prefHeight="57.0" prefWidth="170.0" text="Name:" />
             <TextField fx:id="name" promptText="Input your name" GridPane.columnIndex="1" />
-            <TextField fx:id="password" promptText="input your password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <PasswordField fx:id="password" promptText="input your password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label alignment="CENTER_RIGHT" prefHeight="57.0" prefWidth="170.0" text="Password:" GridPane.rowIndex="1" />
             <Button fx:id="login" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="75.0" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
+      <Label fx:id="error" prefHeight="15.0" prefWidth="269.0" textFill="#f20909" GridPane.rowIndex="2" />
    </children>
 </GridPane>
