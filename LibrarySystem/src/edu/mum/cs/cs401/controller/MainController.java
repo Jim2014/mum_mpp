@@ -17,43 +17,59 @@ import sun.rmi.runtime.Log;
  */
 public class MainController {
     @FXML private Pane content;
-    @FXML private Button CheckOutBook;
-    @FXML private Label error;
+    @FXML private Button CheckOutBookBtn;
+    @FXML private Button AddBookBtn;
+    @FXML private Button AdminBtn;
+    @FXML private Label info;
     @FXML private void ShowAdminUI(ActionEvent event)throws Exception
     {
-        error.setText("");
-        String loginRole=LoginController.GetLoginPerson().getRole();
-        if(!loginRole.equals(Person.ADMINLIBRARIAN)&&!loginRole.equals(Person.ADMIN))
-        {
-            error.setText("You have no permit to AdminUI!");
-            return;
-        }
         content.getChildren().clear();
         content.getChildren().add(FXMLLoader.load(getClass().getResource("../UI/AdminUI.fxml")));
     }
 
     @FXML private void ShowAddBookUI(ActionEvent event)throws Exception
     {
-        String loginRole=LoginController.GetLoginPerson().getRole();
-        if(!loginRole.equals(Person.ADMINLIBRARIAN)&&!loginRole.equals(Person.ADMIN))
-        {
-            error.setText("You have no permit to AddBookUI!");
-            return;
-        }
-        error.setText("");
         content.getChildren().clear();
         content.getChildren().add(FXMLLoader.load(getClass().getResource("../UI/AddBookUI.fxml")));
     }
     @FXML private void ShowCheckoutBook(ActionEvent event)throws Exception
     {
-        String loginRole=LoginController.GetLoginPerson().getRole();
-        if(!loginRole.equals(Person.ADMINLIBRARIAN)&&!loginRole.equals(Person.LIBRARIAN))
-        {
-            error.setText("You have no permit to CheckoutBookUI!");
-            return;
-        }
-        error.setText("");
         content.getChildren().clear();
         content.getChildren().add(FXMLLoader.load(getClass().getResource("../UI/CheckOutBookUI.fxml")));
+    }
+
+    @FXML private void Logout(ActionEvent event)throws Exception
+    {
+       content.getScene().setRoot((FXMLLoader.load(getClass().getResource("../UI/LoginUI.fxml"))));
+    }
+    public void enable(Person loginPerson)
+    {
+        info.setText("Welcome "+loginPerson.getFirstName()+" "+loginPerson.getLastName());
+        String loginRole=loginPerson.getRole();
+        if(loginRole.equals(Person.ADMINLIBRARIAN))
+        {
+            AddBookBtn.setDisable(false);
+            AdminBtn.setDisable(false);
+            CheckOutBookBtn.setDisable(false);
+        }
+        else if(loginRole.equals(Person.ADMIN))
+        {
+            AddBookBtn.setDisable(false);
+            AdminBtn.setDisable(false);
+            CheckOutBookBtn.setDisable(true);
+        }
+        else if(loginRole.equals(Person.LIBRARIAN))
+        {
+            AddBookBtn.setDisable(true);
+            AdminBtn.setDisable(true);
+            CheckOutBookBtn.setDisable(false);
+        }
+        else
+        {
+            AddBookBtn.setDisable(true);
+            AdminBtn.setDisable(true);
+            CheckOutBookBtn.setDisable(true);
+        }
+
     }
 }

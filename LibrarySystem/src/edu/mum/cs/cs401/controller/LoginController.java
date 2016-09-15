@@ -16,10 +16,7 @@ import javafx.scene.layout.GridPane;
  * Created by Administrator on 2016/9/15 0015.
  */
 public class LoginController {
-    static private  Person loginPerson;
-    static public  Person GetLoginPerson(){
-        return  loginPerson;
-    }
+
     @FXML private TextField name;
     @FXML private PasswordField password;
     @FXML private Label error;
@@ -33,8 +30,12 @@ public class LoginController {
             return;
         }
 
-        loginPerson=person;
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../UI/MainUI.fxml"));
         Scene scene=name.getScene();
-        scene.setRoot(FXMLLoader.load(getClass().getResource("../UI/MainUI.fxml")));
+        scene.setRoot(fxmlLoader.load());
+
+        MainController controller = fxmlLoader.getController();
+        controller.enable(person);
+
     }
 }

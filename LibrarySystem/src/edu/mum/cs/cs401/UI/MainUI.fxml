@@ -4,15 +4,16 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane fx:controller="edu.mum.cs.cs401.controller.MainController" dividerPositions="0.14824120603015076" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane dividerPositions="0.14824120603015076" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.mum.cs.cs401.controller.MainController">
   <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="63.0" prefWidth="798.0">
          <children>
-            <Button fx:id="AdminUI" layoutX="25.0" layoutY="14.0" mnemonicParsing="false" onAction="#ShowAdminUI" text="Admin" />
-            <Button fx:id="AddBookUI" layoutX="99.0" layoutY="14.0" mnemonicParsing="false" onAction="#ShowAddBookUI" text="AddBook" />
-            <Button fx:id="CheckoutBook" layoutX="191.0" layoutY="14.0" mnemonicParsing="false" onAction="#ShowCheckoutBook" text="Checkout Book" />
-            <Label fx:id="error" layoutX="310.0" layoutY="18.0" prefHeight="15.0" prefWidth="276.0" textFill="#f5010d" />
+            <Button fx:id="AdminBtn" layoutX="23.0" layoutY="32.0" mnemonicParsing="false" onAction="#ShowAdminUI" text="Admin" />
+            <Button fx:id="AddBookBtn" layoutX="97.0" layoutY="32.0" mnemonicParsing="false" onAction="#ShowAddBookUI" text="AddBook" />
+            <Button fx:id="CheckOutBookBtn" layoutX="189.0" layoutY="32.0" mnemonicParsing="false" onAction="#ShowCheckoutBook" text="Checkout Book" />
+            <Button layoutX="720.0" layoutY="32.0" mnemonicParsing="false" onAction="#Logout" text="Logout" />
+            <Label fx:id="info" layoutX="470.0" layoutY="36.0" prefHeight="15.0" prefWidth="239.0" textFill="#171717" />
          </children></AnchorPane>
-    <AnchorPane fx:id="content" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+    <AnchorPane fx:id="content" minHeight="0.0" minWidth="0.0" prefHeight="553.0" prefWidth="798.0" />
   </items>
 </SplitPane>

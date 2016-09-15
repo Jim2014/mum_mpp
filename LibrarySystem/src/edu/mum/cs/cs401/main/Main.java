@@ -17,17 +17,17 @@ public class Main extends Application {
         List<Address> addresses= new ArrayList<Address>();
         Address address=new Address("1000 N","Fairfield","IA","52557");
 
-        Person person1=new Person("admin","Jin","Zhou",addresses,"641-123-123",Person.ADMIN);
-        person1.setPassword("admin");
-        DataBase.userTable.add("admin",person1);
+        Person person1=new Person("user1","user1","admin",addresses,"641-123-123",Person.ADMIN);
+        person1.setPassword("user1");
+        DataBase.userTable.add("user1",person1);
 
-        Person person2=new Person("admin1","Jin","Zhou",addresses,"641-123-123",Person.ADMINLIBRARIAN);
-        person2.setPassword("admin1");
-        DataBase.userTable.add("admin1",person2);
+        Person person2=new Person("user2","user2","LIBRARIAN",addresses,"641-123-123",Person.LIBRARIAN);
+        person2.setPassword("user2");
+        DataBase.userTable.add("user2",person2);
 
-        Person person3=new Person("librarian","Jin","Zhou",addresses,"641-123-123",Person.LIBRARIAN);
-        person3.setPassword("librarian");
-        DataBase.userTable.add("librarian",person3);
+        Person person3=new Person("user3","user3","ADMINLIBRARIAN",addresses,"641-123-123",Person.ADMINLIBRARIAN);
+        person3.setPassword("user3");
+        DataBase.userTable.add("user3",person3);
 
         launch(args);
     }
